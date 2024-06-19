@@ -15,6 +15,51 @@ The **UserVault** project provides a comprehensive system for managing user data
 - **Hibernate:** ORM framework for database interactions.
 - **MySQL:** Relational database management system for storing user data.
 
+
+## Unit Tests
+
+The UserVault project includes comprehensive unit tests to verify the functionality of its components. Below are the main test classes and their purpose:
+
+### UserControllerTest
+
+The `UserControllerTest` class tests the API endpoints in the `UserController` class using Spring's `MockMvc` for HTTP request simulation.
+
+- **testRegisterUser**: Verifies the registration of a new user through the `/api/user/register` endpoint.
+- **testGetUserByUserName**: Tests the retrieval of user information by username using the `/api/user/fetch` endpoint.
+- **testUpdatePassword**: Validates the functionality to update a user's password via the `/api/user/updatePassword` endpoint.
+- **testDeleteUser**: Ensures the deletion of a user from the database using the `/api/user` endpoint.
+
+### UserServiceTest
+
+The `UserServiceTest` class tests the business logic methods in the `UserService` class, mocking the data repository (`IUserRepo`) interactions.
+
+- **testUserSignup_Success**: Tests successful user registration and verifies the save operation in the repository.
+- **testUserSignup_EmailAlreadyInUse**: Validates the handling of a scenario where the email is already registered during user signup.
+- **testGetUser_Success**: Verifies the retrieval of a user by username.
+- **testGetUser_UserNotFound**: Ensures proper exception handling when attempting to retrieve a non-existent user.
+- **testUpdatePassword_Success**: Tests the successful update of a user's password and verifies the save operation in the repository.
+- **testUpdatePassword_UserNotFound**: Validates the handling of a scenario where the user email is not registered during password update.
+- **testDeleteUser_Success**: Tests the successful deletion of a user and verifies the delete operation in the repository.
+- **testDeleteUser_UserNotFound**: Ensures proper exception handling when attempting to delete a non-existent user.
+
+### PasswordEncryptorTest
+
+The `PasswordEncryptorTest` class tests the encryption utility used to hash passwords securely.
+
+- **testEncrypt**: Verifies that the password encryption produces a hash that matches the raw password.
+- **testEncryptDifferentPasswords**: Tests that different passwords produce different hashes.
+- **testEncryptSamePasswordProducesDifferentHashes**: Validates that encrypting the same password multiple times produces different hashes to enhance security.
+
+### Running Unit Tests
+
+To run the unit tests locally:
+
+1. Ensure you have Maven installed.
+2. Navigate to the project root directory in your terminal.
+3. Run `mvn test` to execute all unit tests.
+4. View the test results in your terminal or IDE's test runner.
+
+
 ## Setup Instructions
 1. **Clone the Repository**
 
@@ -48,25 +93,6 @@ The **UserVault** project provides a comprehensive system for managing user data
 4. **Access APIs**
 
     Use tools like Swagger or Postman to interact with the RESTful APIs.
-
-
-
-### Open with Preferred IDE
-
-For seamless development, you can download the project from GitHub and open it using your favorite Integrated Development Environment (IDE), such as IntelliJ IDEA or Visual Studio Code (VS Code):
-
-**IntelliJ IDEA:**
-1. **Launch IntelliJ IDEA:** Start the IntelliJ IDEA application on your computer.
-2. **Open Project:** Navigate to `File > Open` from the main menu.
-3. **Select Project Directory:** Browse and select the directory where you cloned the project.
-4. **Automatic Import:** IntelliJ IDEA will automatically detect and import the project as a Maven project, including all dependencies and configurations.
-
-**Visual Studio Code (VS Code):**
-1. **Launch VS Code:** Open Visual Studio Code on your system.
-2. **Open Project Folder:** Go to `File > Open Folder` from the menu.
-3. **Choose Project Folder:** Locate and select the folder containing the downloaded project.
-4. **Install Java Extension Pack:** If not already installed, ensure you have the [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) to provide robust Java support and functionalities.
-5. **Automatic Setup:** VS Code will set up the project environment based on the detected configurations and dependencies.
 
 
 ## API Documentation
@@ -164,6 +190,23 @@ For seamless development, you can download the project from GitHub and open it u
  ![Screenshot (972)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/c6840add-951f-423a-bd7c-5d217e665a5b)
 
 
+### Open with Preferred IDE
+
+For seamless development, you can download the project from GitHub and open it using your favorite Integrated Development Environment (IDE), such as IntelliJ IDEA or Visual Studio Code (VS Code):
+
+**IntelliJ IDEA:**
+1. **Launch IntelliJ IDEA:** Start the IntelliJ IDEA application on your computer.
+2. **Open Project:** Navigate to `File > Open` from the main menu.
+3. **Select Project Directory:** Browse and select the directory where you cloned the project.
+4. **Automatic Import:** IntelliJ IDEA will automatically detect and import the project as a Maven project, including all dependencies and configurations.
+
+**Visual Studio Code (VS Code):**
+1. **Launch VS Code:** Open Visual Studio Code on your system.
+2. **Open Project Folder:** Go to `File > Open Folder` from the menu.
+3. **Choose Project Folder:** Locate and select the folder containing the downloaded project.
+4. **Install Java Extension Pack:** If not already installed, ensure you have the [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) to provide robust Java support and functionalities.
+5. **Automatic Setup:** VS Code will set up the project environment based on the detected configurations and dependencies.
+
 
 ## Data Models
 
@@ -189,3 +232,5 @@ public class User {
     @NotBlank(message = "Address cannot be blank")
     private String address;
 }
+
+
