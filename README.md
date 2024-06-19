@@ -1,5 +1,18 @@
 # UserVault
 
+curl -X 'POST' \
+  'http://localhost:8080/api/user/register' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "userId": 0,
+  "userName": "string",
+  "userEmail": "string@gmail.com",
+  "userPassword": "string",
+  "contactNumber": "8713362370",
+  "address": "string"
+}'
+
 ## Overview
 The **UserVault** project provides a comprehensive system for managing user data. It allows for user registration, updating, deletion, and retrieval of user information. Additional functionalities include hashing passwords for security. The project is implemented using Java Spring Boot and Hibernate.
 
