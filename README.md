@@ -73,7 +73,7 @@ To run the unit tests locally:
     Configure your MySQL server and create a database named `uservault`. Update the `application.properties` with your database credentials:
 
     ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3306/your_databasename
+    spring.datasource.url=jdbc:mysql://localhost:3306/uservault
     spring.datasource.username=your_username
     spring.datasource.password=your_password
     spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
