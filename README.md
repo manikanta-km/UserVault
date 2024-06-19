@@ -98,7 +98,7 @@ To run the unit tests locally:
 ## API Documentation
 
 ### **POST /api/user/register:** Register a new user.
-     - The API allows users to register by submitting their details, below is an example of the required request body and response.
+ The API allows users to register by submitting their details, below is an example of the required request body and response.
      
    **Request Body:**
 
@@ -126,7 +126,7 @@ To run the unit tests locally:
 
 
 ### **GET /api/user/fetch:** Retrieve user information by username.
-    -  The API facilitates users to fetch the user details by username, below is an example of the required request body and response.
+ The API facilitates users to fetch the user details by username, below is an example of the required request body and response.
 
    **Parameters:**
    - `userName`: String
@@ -150,7 +150,7 @@ To run the unit tests locally:
 
 
 ### **PUT /api/user/updatePassword:** Update user password.
-     -  The API facilitates the users to update the password, below is an example of the required request body and response.
+ The API facilitates the users to update the password, below is an example of the required request body and response.
 
    **Parameters:**
    - `email`: String
@@ -171,7 +171,7 @@ To run the unit tests locally:
     
 
 ### **DELETE /api/user:** Delete a user by email.
-     -  The API facilitates the users to update the password, below is an example of the required request body and response.
+ The API facilitates the users to update the password, below is an example of the required request body and response.
 
 
    **Parameters:**
