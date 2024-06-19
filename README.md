@@ -49,14 +49,34 @@ The **UserVault** project provides a comprehensive system for managing user data
 
     Use tools like Swagger or Postman to interact with the RESTful APIs.
 
+
+
+### Open with Preferred IDE
+
+For seamless development, you can download the project from GitHub and open it using your favorite Integrated Development Environment (IDE), such as IntelliJ IDEA or Visual Studio Code (VS Code):
+
+**IntelliJ IDEA:**
+1. **Launch IntelliJ IDEA:** Start the IntelliJ IDEA application on your computer.
+2. **Open Project:** Navigate to `File > Open` from the main menu.
+3. **Select Project Directory:** Browse and select the directory where you cloned the project.
+4. **Automatic Import:** IntelliJ IDEA will automatically detect and import the project as a Maven project, including all dependencies and configurations.
+
+**Visual Studio Code (VS Code):**
+1. **Launch VS Code:** Open Visual Studio Code on your system.
+2. **Open Project Folder:** Go to `File > Open Folder` from the menu.
+3. **Choose Project Folder:** Locate and select the folder containing the downloaded project.
+4. **Install Java Extension Pack:** If not already installed, ensure you have the [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) to provide robust Java support and functionalities.
+5. **Automatic Setup:** VS Code will set up the project environment based on the detected configurations and dependencies.
+
+
 ## API Documentation
 
 ### **POST /api/user/register:** Register a new user.
-     - The API allows users to register by submitting their details. Below is an example of the required request body, along with a corresponding Swagger sample screenshot.
-
+     - The API allows users to register by submitting their details, below is an example of the required request body and response.
+     
    **Request Body:**
 
-    json
+     ```json
     {
       "userName": "username",
       "userEmail": "user@example.com",
@@ -64,16 +84,23 @@ The **UserVault** project provides a comprehensive system for managing user data
       "contactNumber": "1234567890",
       "address": "123 Main St"
     }
+    ```
 
-    ![Swagger Screenshot](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/026502e1-deaf-40da-9002-bad3bf3da0c4)
+   **Response:**
 
-    
-    - Below is the Swagger screenshot illustrating the expected output.
+    ```json
+    "User Registered"
+    ```
 
-    ![Screenshot (966)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/bca37743-82c0-455c-80e6-7cae3b20d8a5)
+- Below are the screenshots demonstrating the input parameters and the resulting output as seen in Swagger.
+
+![Swagger Screenshot](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/026502e1-deaf-40da-9002-bad3bf3da0c4)
+
+![Screenshot (966)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/bca37743-82c0-455c-80e6-7cae3b20d8a5)
 
 
 ### **GET /api/user/fetch:** Retrieve user information by username.
+    -  The API facilitates users to fetch the user details by username, below is an example of the required request body and response.
 
    **Parameters:**
    - `userName`: String
@@ -89,10 +116,15 @@ The **UserVault** project provides a comprehensive system for managing user data
       "address": "123 Main St"
     }
     ```
+- Below are the screenshots demonstrating the input parameters and the resulting output as seen in Swagger.
 
-    ![Fetch User](https://github.com/manikanta-km/UserVault/assets/your-asset-id/fetch-user.png)
+![Screenshot (967)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/40529191-6abd-4f82-9229-f1b5bc665b3a)
+
+![Screenshot (968)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/48b7a9af-237e-498c-9c78-960e5a992482)
+
 
 ### **PUT /api/user/updatePassword:** Update user password.
+     -  The API facilitates the users to update the password, below is an example of the required request body and response.
 
    **Parameters:**
    - `email`: String
@@ -103,10 +135,18 @@ The **UserVault** project provides a comprehensive system for managing user data
     ```json
     "Password updated successfully"
     ```
+- Below are the screenshots demonstrating the input parameters and the resulting output as seen in Swagger.
 
-    ![Update Password](https://github.com/manikanta-km/UserVault/assets/your-asset-id/update-password.png)
+![Screenshot (969)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/1454dea5-2082-44e0-9632-f81ddeff2919)
+
+![Screenshot (970)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/8af73384-cb79-43a0-a19c-26e3a74f3991)
+
+
+    
 
 ### **DELETE /api/user:** Delete a user by email.
+     -  The API facilitates the users to update the password, below is an example of the required request body and response.
+
 
    **Parameters:**
    - `email`: String
@@ -117,31 +157,13 @@ The **UserVault** project provides a comprehensive system for managing user data
     "User deleted successfully"
     ```
 
-    ![Delete User](https://github.com/manikanta-km/UserVault/assets/your-asset-id/delete-user.png)
+- Below are the screenshots demonstrating the input parameters and the resulting output as seen in Swagger.
 
-### **GET /api/user/list:** Retrieve a paginated list of users.
+ ![Screenshot (971)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/88652ac1-b1a0-4d59-a909-e4c7f9026307)
 
-   **Parameters:**
-   - `page`: Integer
-   - `size`: Integer
-   - `sort`: String (optional)
+ ![Screenshot (972)](https://github.com/manikanta-km/EmployeeDatabase/assets/142763418/c6840add-951f-423a-bd7c-5d217e665a5b)
 
-   **Response:**
 
-    ```json
-    [
-      {
-        "userId": 1,
-        "userName": "username",
-        "userEmail": "user@example.com",
-        "contactNumber": "1234567890",
-        "address": "123 Main St"
-      },
-      ...
-    ]
-    ```
-
-    ![Paginated User List](https://github.com/manikanta-km/UserVault/assets/your-asset-id/paginated-user-list.png)
 
 ## Data Models
 
